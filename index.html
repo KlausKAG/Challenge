@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Encrypt Decrypt</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Encriptador de Texto!</h1>
+    <p>Coloque seu texto em letras minúsculas e sem acentos</p>
+
+    <textarea id="inputText" placeholder="Insira o texto aqui"></textarea><br>
+    <button onclick="encrypt()">Criptografar</button>
+    <button onclick="decrypt()">Descriptografar</button>
+    <textarea id="outputText" placeholder="Texto criptografado/descriptografado"></textarea>
+</div>
+
+<script>
+function definirTexto(tag, txt) {
+    let n1 = document.querySelector(tag)
+    n1.innerHTML = txt
+}
+
+definirTexto('h1', 'Encriptador de Texto!')
+definirTexto('p', 'Coloque seu texto em letras minúsculas e sem acentos')
+
+function encrypt() {
+    var input = document.getElementById("inputText").value;
+    var output = input.replace(/e/g, "enter")
+                     .replace(/i/g, "imes")
+                     .replace(/a/g, "ai")
+                     .replace(/o/g, "ober")
+                     .replace(/u/g, "ufat");
+    document.getElementById("outputText").value = output;
+}
+
+function decrypt() {
+    var input = document.getElementById("inputText").value;
+    var output = input.replace(/enter/g, "e")
+                     .replace(/imes/g, "i")
+                     .replace(/ai/g, "a")
+                     .replace(/ober/g, "o")
+                     .replace(/ufat/g, "u");
+    document.getElementById("outputText").value = output;
+}
+</script>
+</body>
+</html>
